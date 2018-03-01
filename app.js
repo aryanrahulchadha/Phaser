@@ -71,7 +71,9 @@ function create(){
 
 	//create keyboard entries
 	cursors = game.input.keyboard.createCursorKeys();
-
+wKey = game.input.keyboard.addKey (Phaser.Keyboard.W);
+aKey = game.input.keyboard.addKey (Phaser.Keyboard.A);
+dKey = game.input.keyboard.addKey (Phaser.Keyboard.D);
 
 }
 
@@ -83,11 +85,11 @@ function update(){
 	//set player velocity to 0 if no events
 	player.body.velocity.x = 0;
 
-	if(cursors.left.isDown){
-		//move left
+	if(cursors.left.isDown || aKey.isDown){
+		
 		player.animations.play('left');
 		player.body.velocity.x = -150;
-	} else if(cursors.right.isDown){
+	} else if(cursors.right.isDown|| dKey.isDown){
 		//move left
 		player.animations.play('right');
 		player.body.velocity.x = 150;
@@ -96,7 +98,7 @@ function update(){
 		player.frame = 4;
 	}
 
-	if(cursors.up.isDown && player.body.touching.down){
+	if((cursors.up.isDown || wKey.isDown) && player.body.touching.down){
 		player.body.velocity.y = -300;
 	}
 
