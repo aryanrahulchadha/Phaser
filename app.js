@@ -6,6 +6,7 @@ function preload(){
 	game.load.image('sky','assets/sky.png');
 	game.load.image('ground', 'assets/platform.png');
 	game.load.image('star', 'assets/star.png');
+	game.load.image('firstaid', 'assets/firstaid.png');
 	game.load.spritesheet('dude', 'assets/dude.png',32,48);
 	game.load.spritesheet('baddie', 'assets/baddie.png',32,32);
 }
@@ -106,7 +107,7 @@ game.physics.arcade.overlap(player, enemy1, loseLife)
 
 moveEnemy();
 
-if(lives = 0){
+if(lives <= 0){
 	endGame();
 }
 }
