@@ -70,11 +70,11 @@ function create(){
 		star.body.bounce.y = 0.7 + Math.random()* 0.2;
 	}
 		//create stars
-	firstaid = game.add.physicsGroup();
-	firstaid.enableBody = true;
+	firstaids = game.add.physicsGroup();
+	firstaids.enableBody = true;
 	//use a loop to create 12 stars
 	for(var i = 0; i < 12; i++){
-		var star = stars.create(i * 70,0, 'star');
+		var firstaid = firstaids.create(i * 70,0, 'firstaid');
 		firstaid.body.gravity.y = 200;
 		firstaid.body.bounce.y = 0.7 + Math.random()* 0.2;
 	}
